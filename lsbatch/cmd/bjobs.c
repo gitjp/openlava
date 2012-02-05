@@ -546,7 +546,7 @@ displayJobs (struct jobInfoEnt *job, struct jobInfoHead *jInfoH,
             if (lsbParams[LSB_SHORT_HOSTLIST].paramValue && job->numExHosts > 1
                 && strcmp(lsbParams[LSB_SHORT_HOSTLIST].paramValue, "1") == 0 ) {
                 for (i = 1; i < hostList->listSize; i++) {
-                    execHostListUsed+=(strlen(job->exHosts[i])+1);
+                    execHostListUsed+=(strlen(job->exHosts[i])+4);
                     if (execHostListUsed >= execHostListSize) {
                         execHostListSize += MAXLINELEN;
                         if ((execHostList =
